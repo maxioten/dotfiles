@@ -10,6 +10,7 @@ ln -sf ~/dotfiles/hypr ~/.config/hypr
 ln -sf ~/dotfiles/kitty ~/.config/kitty
 ln -sf ~/dotfiles/waybar ~/.config/waybar
 ln -sf ~/dotfiles/wofi ~/.config/wofi
+ln -sf ~/dotfiles/fastfetch ~/.config/fastfetch
 
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 
@@ -21,5 +22,7 @@ sudo pacman -S --needed hyprland kitty waybar wofi
 
 echo "🎨 Instalando fuentes..."
 sudo pacman -S --needed ttf-jetbrains-mono-nerd
+
+sudo pacman -S --needed fastfetch
 
 echo "🔥 Listo. Reiniciá Hyprland."

@@ -1,0 +1,123 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+        "source": "/home/maxioten/Downloads/fastfetch.png",
+        "type": "kitty",
+        "width": 30,
+        "padding": {
+            "top": 2,
+            "left": 2
+        }
+    },
+    "display": {
+        "separator": " : "
+    },
+    "modules": [
+        // --- BLOQUE OS INFO ---
+        {
+            "type": "custom",
+            "format": " 󰄛  OS Info",
+            "outputColor": "cyan"
+        },
+        {
+            "type": "custom",
+            "format": "╭────────────────────────────────────────────────────╮"
+        },
+        {
+            "type": "os",
+            "key": "│  OS",
+            "keyColor": "red"
+        },
+        {
+            "type": "kernel",
+            "key": "│  Kernel",
+            "keyColor": "red"
+        },
+        {
+            "type": "packages",
+            "key": "│ 󰏖 Packages",
+            "keyColor": "green"
+        },
+        {
+            "type": "display",
+            "key": "│ 󰍹 Display",
+            "keyColor": "green"
+        },
+        {
+            "type": "wm",
+            "key": "│  WM",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "│  Terminal",
+            "keyColor": "yellow",
+            "format": "kitty" 
+        },
+        {
+            "type": "custom",
+            "format": "╰────────────────────────────────────────────────────╯"
+        },
+
+        "break",
+
+        // --- BLOQUE USUARIO Y HARDWARE ---
+        {
+            "type": "title",
+            "key": " ",
+            "format": "{1}@{2}",
+            "keyColor": "red"
+        },
+        {
+            "type": "custom",
+            "format": "╭────────────────────────────────────────────────────╮"
+        },
+        {
+            "type": "cpu",
+            "key": "│  CPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "key": "│ 󰢮 GPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "shell",
+            "key": "│  Shell",
+            "keyColor": "magenta"
+        },
+        {
+        "type": "disk",
+        "folders": "/",
+        "key": "│  Disk",
+        "keyColor": "magenta",
+        "format": "{1} / {2} ({3})"
+        },
+        {
+            "type": "memory",
+            "key": "│  Memory",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "swap",
+            "key": "│ 󰓡 Swap",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "uptime",
+            "key": "│ 󱎫 Uptime",
+            "keyColor": "red"
+        },
+        {
+            "type": "custom",
+            "format": "╰────────────────────────────────────────────────────╯"
+        },
+        "break",
+        {
+            "type": "colors",
+            "symbol": "circle"
+        }
+    ]
+}
+          
