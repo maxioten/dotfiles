@@ -1,0 +1,11 @@
+width=600
+height=400
+location=center
+show=drun
+prompt=Choose your mounchie 😎:
+allow_images=true
+term=kitty
+lines=10
+columns=1
+hide_scroll=true
+no_actions=true

@@ -1,0 +1,153 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    min-height: 0;
+}
+
+/* Estilo base para todas las 'islas' */
+#workspaces,
+#mpd,
+#clock,
+#pulseaudio,
+#network,
+#custom-power {
+    padding: 0 8px;
+    margin: 2px 3px;
+    border-radius: 10px; /* 🔽 antes 15–20 */
+}
+
+/* --- LADO IZQUIERDO --- */
+#workspaces {
+    background-color: rgba(26, 27, 38, 0.85);
+    padding: 0 2px;
+    margin: 1px;
+    border-radius: 8px;
+}
+
+#workspaces button {
+    padding: 0;
+    margin: 2px 3px;
+    min-width: 20px;   /* 🔽 antes 32 */
+    min-height: 20px;  /* 🔽 antes 32 */
+    font-size: 10px;   /* 🔽 clave */
+}
+
+#taskbar {
+    background-color: rgba(46, 32, 32, 0.85); /* Marrón oscuro cálido */
+    margin: 2px 0;
+    padding: 0 6px;
+    border-radius: 15px;
+}
+
+#taskbar button {
+    padding: 0 3px;
+    border-bottom: 2px solid transparent; /* Evita que el layout salte al activar uno */
+}
+
+#taskbar button.active {
+    background-color: rgba(211, 129, 91, 0.2); /* Resalte naranja muy suave */
+    border-bottom: 2px solid #d3815b; /* Línea naranja atardecer */
+}
+
+#taskbar button:hover {
+    background-color: rgba(249, 228, 192, 0.1); /* Brillo crema al pasar el mouse */
+}
+
+#workspaces button.active {
+    background-color: #d3815b;
+    color: #2e2020;
+    border-radius: 999px;
+    border-bottom: none; 
+}
+
+#mpd {
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #d3815b; /* Color naranja para la música */
+}
+
+#tray {
+    background-color: rgba(46, 32, 32, 0.85);
+    border-radius: 20px;
+    margin: 2px;
+    padding: 0 6px;
+}
+
+/* IMPORTANTE: forzar alineación y tamaño limpio */
+#tray > widget {
+    margin: 0 1px;
+    padding: 2px;
+    border-radius: 10px; /* no 50% */
+    background: transparent;
+}
+
+/* hover limpio sin deformar */
+#tray > widget:hover {
+    background-color: rgba(211, 129, 91, 0.25);
+    border-radius: 10px;
+}
+
+/* estados */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #8c3a36;
+    border-radius: 10px; /* evitar círculo perfecto */
+}
+
+/* menú */
+#tray menu {
+    background-color: #2e2020;
+    color: #f9e4c0;
+}
+
+/* --- CENTRO (RELOJ) --- */
+#clock {
+    background-color: rgba(46, 32, 32, 0.85); /* El mismo marrón del tren */
+    color: #f9e4c0; /* Texto crema suave */
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 2px;
+    border-radius: 20px; /* Forma de píldora/isla */
+    transition: all 0.3s ease;
+}
+
+#clock:hover {
+    background-color: rgba(211, 129, 91, 0.4); /* Brillo naranja al pasar el mouse */
+    color: #ffffff;
+}
+
+/* --- LADO DERECHO --- */
+#pulseaudio {
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #d3815b; /* Naranja */
+}
+
+#network {
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #d3815b; /* Rojo oscuro para balancear */
+}
+
+#custom-power {
+    background-color: rgba(26, 27, 38, 0.85); /* Fondo rojizo tenue */
+    color: #d3815b;  
+}
+
+/* Ajustes finales de márgenes */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #custom-power {
+    margin-right: 0;
+}

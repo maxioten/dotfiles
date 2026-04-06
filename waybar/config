@@ -1,0 +1,75 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 10,
+    "margin-top": 6,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 10,
+
+    "modules-left": ["hyprland/workspaces", "mpd", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["wlr/taskbar", "pulseaudio", "network", "custom/power"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "tray": {
+    "icon-size": 18,
+    "spacing": 10
+},
+
+    "mpd": {
+        "format": "{elapsedTime:%M:%S} | ◀ {stateIcon} ▶  {artist} - {title}",
+        "format-stopped": "00:00 | 󰝚 No music",
+        "format-disconnected": "󰝛 MPD off",
+        "state-icons": {
+            "playing": " ",
+            "paused": " "
+        },
+        "unknown-tag": "N/A",
+        "interval": 1
+    },
+
+    "clock": {
+        "format": " {:%b %d  %H:%M} ",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": " {icon} {volume}% ",
+        "format-muted": " 󰝟 mute ",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "close",
+        "sort-by-app-id": true
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀  LAN",
+        "format-disconnected": "⚠ Sin red",
+        "on-click": "networkmanager_dmenu"
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}
+
