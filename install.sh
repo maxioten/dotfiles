@@ -25,4 +25,6 @@ sudo pacman -S --needed ttf-jetbrains-mono-nerd
 
 sudo pacman -S --needed fastfetch
 
+sudo pacman -S --needed archlinux-xdg-menu
+
 echo "🔥 Listo. Reiniciá Hyprland."
