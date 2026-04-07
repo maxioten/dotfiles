@@ -18,7 +18,7 @@ echo "✅ Configs instaladas"
 
 # Instalar paquetes básicos (Arch)
 echo "📦 Instalando paquetes..."
-sudo pacman -S --needed hyprland kitty waybar wofi
+sudo pacman -S --needed hyprland kitty waybar wofi mpd mpc ncmpcpp
 
 echo "🎨 Instalando fuentes..."
 sudo pacman -S --needed ttf-jetbrains-mono-nerd
