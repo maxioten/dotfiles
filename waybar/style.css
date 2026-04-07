@@ -133,6 +133,27 @@ window#waybar {
     color: #d3815b; /* Naranja */
 }
 
+#bluetooth,
+#bluetooth.discoverable,
+#bluetooth.discovering,
+#bluetooth.pairable,
+#bluetooth.on,
+#bluetooth.off,
+#bluetooth.connected,
+#bluetooth.no-controller {
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #d3815b; /* Naranja */
+    border-radius: 15px;
+    padding: 2px 10px;
+    margin: 3px 4px;
+}
+
+/* Opcional: Color rojo si sigue sin encontrar el USB */
+#bluetooth.no-controller {
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #d3815b; /* Naranja */
+}
+
 #network {
     background-color: rgba(26, 27, 38, 0.85);
     color: #d3815b; /* Rojo oscuro para balancear */
