@@ -133,6 +133,44 @@ window#waybar {
     color: #d3815b; /* Naranja */
 }
 
+#battery {
+    background-color: rgba(26, 27, 38, 0.85);
+    padding: 0 2px;
+    margin: 1px;
+    border-radius: 8px;
+    color: #d3815b; /* Naranja */
+    padding: 0 10px;
+}
+
+#battery.charging, #battery.plugged {
+    padding: 0 2px;
+    margin: 1px;
+    border-radius: 8px;
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #26A65B; /* Verde */
+}
+
+#battery.warning:not(.charging) {
+    padding: 0 2px;
+    margin: 1px;
+    border-radius: 8px;
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #ffbe6f; /* Naranja */
+}
+
+#battery.critical:not(.charging) {
+    padding: 0 2px;
+    margin: 1px;
+    border-radius: 8px;
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #f53c3c; /* Rojo */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 #bluetooth,
 #bluetooth.discoverable,
 #bluetooth.discovering,

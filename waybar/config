@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces", "mpd", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["wlr/taskbar", "bluetooth", "pulseaudio", "network", "custom/power"],
+    "modules-right": ["wlr/taskbar", "bluetooth", "pulseaudio", "network", "battery", "custom/power"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -23,16 +23,32 @@
 },
 
     "mpd": {
-        "format": "{elapsedTime:%M:%S} | ◀ {stateIcon} ▶  {artist} - {title}",
-        "format-stopped": "00:00 | 󰝚 No music",
-        "format-disconnected": "󰝛 MPD off",
-        "state-icons": {
-            "playing": " ",
-            "paused": " "
-        },
-        "unknown-tag": "N/A",
-        "interval": 1
+    "format": "  {elapsedTime:%M:%S} / {totalTime:%M:%S}  {stateIcon}  {title}",
+    "format-stopped": "  00:00 / 00:00  ⏹ Sin música",
+    "format-disconnected": "󰝛 MPD off",
+    "state-icons": {
+        "playing": "",
+        "paused": ""
     },
+    "tooltip-format": "{title}",
+    "max-length": 40,
+    "interval": 1,
+    "on-click": "mpc toggle",
+    "on-click-right": "mpc next",
+    "on-click-middle": "mpc prev"
+},
+
+    "battery": {
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-icons": ["", "", "", "", ""]
+},
 
     "clock": {
         "format": " {:%b %d  %H:%M} ",
@@ -40,15 +56,17 @@
     },
 
     "pulseaudio": {
-        "format": " {icon} {volume}% ",
-        "format-muted": " 󰝟 mute ",
-        "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol",
-        "scroll-step": 5
-    }, 
+    "format": " {icon} {volume}% ",
+    "format-muted": " 󰝟 mute ",
+    "format-icons": {
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "swayosd-client --output-volume mute-toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "swayosd-client --output-volume raise",
+    "on-scroll-down": "swayosd-client --output-volume lower",
+    "scroll-step": 5
+},	 
 
     "bluetooth": {
     "format": " {status}",
