@@ -2,29 +2,65 @@
 
 echo "🚀 Instalando dotfiles..."
 
-# Crear carpeta config si no existe
+# Crear carpetas necesarias
 mkdir -p ~/.config
 
-# Symlinks (recomendado)
-ln -sf ~/dotfiles/hypr ~/.config/hypr
-ln -sf ~/dotfiles/kitty ~/.config/kitty
-ln -sf ~/dotfiles/waybar ~/.config/waybar
-ln -sf ~/dotfiles/wofi ~/.config/wofi
-ln -sf ~/dotfiles/fastfetch ~/.config/fastfetch
+echo "📂 Copiando configs..."
 
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+cp -r ~/dotfiles/hypr ~/.config/
+cp -r ~/dotfiles/hyprlock ~/.config/
+cp -r ~/dotfiles/hypridle ~/.config/
+cp -r ~/dotfiles/kitty ~/.config/
+cp -r ~/dotfiles/waybar ~/.config/
+cp -r ~/dotfiles/wofi ~/.config/
+cp -r ~/dotfiles/wlogout ~/.config/
+cp -r ~/dotfiles/fastfetch ~/.config/
+
+cp ~/dotfiles/.bashrc ~/
 
 echo "✅ Configs instaladas"
 
-# Instalar paquetes básicos (Arch)
+# -------------------------
+# Instalar paquetes
+# -------------------------
+
 echo "📦 Instalando paquetes..."
-sudo pacman -S --needed hyprland kitty waybar wofi mpd mpc ncmpcpp blueman nano
+
+sudo pacman -S --needed \
+    hyprland \
+    hyprlock \
+    hypridle \
+    hyprpaper \
+    kitty \
+    waybar \
+    wofi \
+    wlogout \
+    fastfetch \
+    mpd \
+    mpc \
+    ncmpcpp \
+    blueman \
+    nano \
+    archlinux-xdg-menu \
+    pipewire \
+    wireplumber \
+    xdg-desktop-portal-hyprland
+
+# -------------------------
+# Fuentes
+# -------------------------
 
 echo "🎨 Instalando fuentes..."
-sudo pacman -S --needed ttf-jetbrains-mono-nerd
 
-sudo pacman -S --needed fastfetch
+sudo pacman -S --needed \
+    ttf-jetbrains-mono-nerd
 
-sudo pacman -S --needed archlinux-xdg-menu
+# -------------------------
+# Bluetooth
+# -------------------------
 
-echo "🔥 Listo. Reiniciá Hyprland."
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+
+echo "🔥 Listo."
+echo "👉 Reiniciá la PC y ejecutá Hyprland."
